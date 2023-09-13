@@ -7,8 +7,13 @@ import "fmt"
 
 type deck []string
 
-func (d deck) print(){
+func newDeck() deck {
+	cards := deck{}
+	return cards
+}
+
+func (d deck) print() {
 	for i, card := range d {
-		fmt.Println(i,card)
+		fmt.Println(i, card)
 	}
 }
