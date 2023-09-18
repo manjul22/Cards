@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type contactInfo struct {
-	email string
+	email   string
 	zipCode int
 }
 
@@ -27,22 +27,23 @@ func main() {
 	// fmt.Println(alex)
 	// fmt.Printf("%+v",alex)
 
-	jim := person {
+	jim := person{
 		firstName: "Jim",
-		lastName: "Party",
+		lastName:  "Party",
 		contactInfo: contactInfo{
-			email: "jim@email.com",
+			email:   "jim@email.com",
 			zipCode: 94000,
 		},
 	}
+
 	jim.updateName("jimmy")
 	jim.print()
 }
 
 func (p person) print() {
-	fmt.Printf("%+v",p)
+	fmt.Printf("%+v", p)
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
 }
